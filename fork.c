@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 int main(int argc, char *argv[]){
-    printf("hello (pid:%d)\n", (int) getpid());
+    printf("hello (pid:%d)!\n", (int) getpid());
     int rc = fork();
     if (rc < 0) { 	// fork failed; exit
         fprintf(stderr, "fork failed\n");

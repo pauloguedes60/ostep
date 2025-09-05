@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
         open("./exec2.output", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
         char *myargs[3];
         myargs[0] = strdup("ls"); 		// program: "wc" (word count)
-        myargs[1] = strdup("."); 	// argument: file to count
+        myargs[1] = strdup("-la"); 	// argument: file to count
         myargs[2] = NULL; 		// marks end of array
         execvp(myargs[0], myargs); 	// runs word count
     } else { 			// parent goes down this path (main)

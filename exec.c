@@ -12,8 +12,8 @@ int main(int argc, char *argv[]){
     } else if (rc == 0) { 	// child (new process)
         printf("child (pid:%d)\n", (int) getpid());
         char *myargs[3];
-        myargs[0] = strdup("ls"); 		// program: "wc" (word count)
-        myargs[1] = strdup("-la"); 	// argument: file to count
+        myargs[0] = strdup("wc"); 		// program: "wc" (word count)
+        myargs[1] = strdup("../exec.c"); 	// argument: file to count
         myargs[2] = NULL; 		// marks end of array
         execvp(myargs[0], myargs); // runs word count
         printf("this shouldn’t print out");

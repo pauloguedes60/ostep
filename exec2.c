@@ -13,10 +13,10 @@ int main(int argc, char *argv[]){
         exit(1);
     } else if (rc == 0) { // child: redirect standard output to a file
         close(STDOUT_FILENO);
-        open("./exec2.output", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
+        open("../exec2.output", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
         char *myargs[3];
-        myargs[0] = strdup("ls"); 		// program: "wc" (word count)
-        myargs[1] = strdup("."); 	// argument: file to count
+        myargs[0] = strdup("wc"); 		// program: "wc" (word count)
+        myargs[1] = strdup("../exec.c"); 	// argument: file to count
         myargs[2] = NULL; 		// marks end of array
         execvp(myargs[0], myargs); 	// runs word count
     } else { 			// parent goes down this path (main)

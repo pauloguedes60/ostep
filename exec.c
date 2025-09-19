@@ -4,7 +4,7 @@
 #include <string.h>
 #include <sys/wait.h>
 
-int main(int argc, char *argv[]){ // new comment
+int main(int argc, char *argv[]){ // new comment2
     printf("hello (pid:%d)\n", (int) getpid());
     int rc = fork();
     if (rc < 0) { 		// fork failed; exit
